@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Hefty;
+  src: url(img/NewType-Regular.OTF);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: Pixel;
+  src: url(img/Pixeboy-z8XGD.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
+  background-color: #1a1a1d;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu {
+  height: 70vh;
+  width: 50vw;
+  margin: 0 auto;
+  align-self: center;
+  /* border: 1px solid black; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.one {
+  height: 20vh;
+  width: 100%;
+  /* border: 1px solid black; */
+  color: #f86502;
+  text-align: center;
+  font-size: 5em;
+  font-family: Hefty;
+}
+
+.hi1 {
+  text-align: center;
+  color: #c3073f;
+  font-family: Hefty;
+  font-size: 5em;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  z-index: 5;
+}
+
+.counter {
+  height: 20vh;
+  width: 30vw;
+  color: #4e4e50;
+  font-family: Pixel;
+  position: absolute;
+  font-size: 6em;
+  left: 1em;
+  align-self: flex-end;
+  font-weight: lighter;
 }
