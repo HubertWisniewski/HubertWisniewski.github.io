@@ -109,7 +109,7 @@ img {
   position: absolute;
   filter: grayscale(100%);
   align-self: center;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 4s ease-in-out;
 }
 
 .About {
@@ -142,6 +142,14 @@ img {
   }
   68%, 72% { width: 50% }
   100% { width: 100% }
+}
+
+@keyframes filters {
+  0% { filter: sepia(100%); filter: saturate(100%); }
+  30% { filter: sepia(0);
+  }
+  68%, 72% { filter: sepia(50%); }
+  100% {filter: sepia(90%);}
 }
 
 @keyframes animated-text{

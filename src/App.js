@@ -29,6 +29,7 @@ class App extends Component {
 
     document.getElementById('App').style.backgroundColor = 'black'
     document.getElementById('Desc').style.animation = 'navbarslide 5s ease 0s 1 normal forwards'
+    document.getElementById('Image').style.animation = 'filters 5s ease 0s 1 normal forwards'
   }
 
   websiteMode = (event) => {
@@ -126,9 +127,9 @@ class App extends Component {
   render(){
   return (
     <div id='App' className="wrapper">
-  <img src={me} alt='me' style={this.state.aboutOn ? {zIndex: 1000} : {zIndex: -1} && this.state.aboutOn ? {opacity: 1} : {opacity: 0} }/>
+  <img id='Image' src={me} alt='me' style={this.state.aboutOn ? {zIndex: 1000} : {zIndex: -1} && this.state.aboutOn ? {opacity: 1} : {opacity: 0} }/>
   <div className="About" style={this.state.aboutOn ? {zIndex: 1000} : {zIndex: -1} && this.state.aboutOn ? {opacity: 1} : {opacity: 0} }>My name is <br/> <br/>Hubert Wiśniewski <hr className='line'/>
-  <p id='Desc' style={{fontSize: '20px', color: 'white'}}>I am an aspiring FrontEnd Developer <br/><br/>based in Poland<br/><br/><br/><br/>I like unorthodox designs <br/><br/> and <br/><br/>I hate boring websites<br/><br/><br/><br/>I am also a guitarist/singer in my band 'The </p>
+  <h1 id='Desc' style={{fontSize: '20px', color: '#dac2a1'}}>I am an aspiring FrontEnd Developer <br/><br/>based in Poland<br/><br/><br/><br/>I like unorthodox designs <br/><br/> and <br/><br/>I hate boring websites<br/><br/><br/><br/>I am also a guitarist/singer in my band <br/><br/><p style={{color: '#f86502'}}>'The Cassino'</p>  </h1>
   
   </div> 
   <div className='toWebsite' id='Start' onClick={(event) => this.websiteMode(event)} style={this.state.counter >= 10 ? {zIndex: 1} : {zIndex: 1}}>Start</div>
