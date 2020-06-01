@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import me from './img/me.jpg'
 
 const beginAt = Date.now()
 var lastElementTime = beginAt;
@@ -20,6 +21,10 @@ class App extends Component {
     this.update()
   }
 
+  showAbout = () => {
+    document.getElementById('App').style.backgroundColor = '#a00131'
+  }
+
   websiteMode = (event) => {
     this.setState({
       websiteMode: true
@@ -31,6 +36,7 @@ class App extends Component {
      const navbutton = document.createElement('div', {className: 'klocek'})
      navbutton.classList.add('klocek')
      navbutton.classList.remove('toWebsite')
+     navbutton.onclick = () => {this.showAbout()}
      navbutton.innerHTML = 'About'
      document.getElementById('Start').appendChild(navbutton)
 
@@ -111,7 +117,8 @@ class App extends Component {
   render(){
   return (
     <div id='App' className="wrapper">
-  <div className='toWebsite' id='Start' onClick={(event) => this.websiteMode(event)} style={this.state.counter >= 10 ? {zIndex: 1} : {zIndex: -1}}>Start</div>
+  {/* <img src={me} alt='me'/> */}
+  <div className='toWebsite' id='Start' onClick={(event) => this.websiteMode(event)} style={this.state.counter >= 10 ? {zIndex: 1} : {zIndex: 1}}>Start</div>
   <div className="counter" style={this.state.websiteMode ? {opacity: 0} : {opacity: 1} && this.state.scoreAppeared ? {zIndex: 1} : {zIndex: -1}}>Score: {this.state.counter}</div>
       <div className="menu">
       <div className="one" style={this.state.websiteMode ? {opacity: 0} : {opacity: 1}}>G00D</div>
