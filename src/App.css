@@ -35,6 +35,7 @@ body {
   text-align: center;
   font-size: 5em;
   font-family: Hefty;
+  transition: all 3s ease-in-out;
 }
 
 .hi1 {
@@ -58,4 +59,50 @@ body {
   left: 1em;
   align-self: flex-end;
   font-weight: lighter;
+  transition: opacity 3s ease-in-out;
+}
+
+.toWebsite {
+  /* padding: 10px; */
+  height: 15vh;
+  color: #1a1a1d;
+  text-align: center;
+  background-color: #c3073f;;
+  font-family: Pixel;
+  position: absolute;
+  font-size: 6em;
+  align-self: flex-start;
+  right: 0;
+  font-weight: lighter;
+  cursor: pointer;
+  display: flex;
+}
+
+.toWebsite:hover {
+  color: #f86502;
+}
+
+.klocek {
+  /* padding: 10px; */
+  flex: 1 1 0;
+  height: 100%;
+  margin-top: 0;
+  font-size: 0.7em;
+  color: #f86502;
+  background-color: #c5c6c7;
+}
+
+.klocek:hover {
+  color: #1a1a1d;
+  background-color: #c3073f;
+}
+/* KEYFRAMES ANIMATIONS */
+
+@keyframes navbarslide {
+  0% { width: 10% }
+  30% { width: 30%;
+  color: aqua;
+  }
+  68%, 72% { width: 50% }
+  100% { width: 100% }
 }
