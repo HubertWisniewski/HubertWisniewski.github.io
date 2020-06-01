@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import me from './img/Meblocks.png'
+import github from './img/github.png'
+import linkedin from './img/linkedin.png'
 
 const beginAt = Date.now()
 var lastElementTime = beginAt;
@@ -15,7 +17,7 @@ class App extends Component {
     counter: 0,
     scoreAppeared: false,
     websiteMode: false,
-    aboutOn: false
+    sectionsOn: false
   }
 
   componentDidMount(){
@@ -24,11 +26,28 @@ class App extends Component {
 
   showAbout = () => {
     this.setState({
-      aboutOn:true
+      sectionsOn:true
     })
-
+    document.getElementById('ContactSection').style.opacity = 0
+    document.getElementById('ContactSection').style.zIndex = -2
+    document.getElementById('AboutSection').style.opacity = 1
     document.getElementById('App').style.backgroundColor = 'black'
     document.getElementById('Desc').style.animation = 'navbarslide 5s ease 0s 1 normal forwards'
+    document.getElementById('DescTwo').style.animation = 'none'
+    document.getElementById('Image').style.animation = 'filters 5s ease 0s 1 normal forwards'
+  }
+
+  showContact = () => {
+    this.setState({
+      sectionsOn:true
+    })
+    document.getElementById('ContactSection').style.zIndex = 2
+    document.getElementById('ContactSection').style.opacity = 1
+    document.getElementById('AboutSection').style.opacity = 0
+    document.getElementById('Desc').style.animation = 'none'
+    document.getElementById('DescTwo').style.animation = 'navbarslide 5s ease 0s 1 normal forwards'
+    document.getElementById('App').style.backgroundColor = 'black'
+    // document.getElementById('Desc').style.animation = 'navbarslide 6s ease 0s 1 normal forwards'
     document.getElementById('Image').style.animation = 'filters 5s ease 0s 1 normal forwards'
   }
 
@@ -46,13 +65,13 @@ class App extends Component {
 
      const navbutton = document.createElement('div', {className: 'klocek'})
      navbutton.classList.add('klocek')
-     navbutton.classList.remove('toWebsite')
      navbutton.onclick = () => {this.showAbout()}
      navbutton.innerHTML = 'About'
      document.getElementById('Start').appendChild(navbutton)
 
      const navbutton2 = document.createElement('div', {className: 'klocek'})
      navbutton2.classList.add('klocek')
+     navbutton2.onclick = () => {this.showContact()}
      navbutton2.innerHTML = 'Contact'
      document.getElementById('Start').appendChild(navbutton2)
 
@@ -127,12 +146,14 @@ class App extends Component {
   render(){
   return (
     <div id='App' className="wrapper">
-  <img id='Image' src={me} alt='me' style={this.state.aboutOn ? {zIndex: 1000} : {zIndex: -1} && this.state.aboutOn ? {opacity: 1} : {opacity: 0} }/>
-  <div className="About" style={this.state.aboutOn ? {zIndex: 1000} : {zIndex: -1} && this.state.aboutOn ? {opacity: 1} : {opacity: 0} }>My name is <br/> <br/>Hubert Wiśniewski <hr className='line'/>
+  <img id='Image' src={me} alt='me' style={this.state.sectionsOn ? {zIndex: 2} : {zIndex: -1} && this.state.sectionsOn ? {opacity: 1} : {opacity: 0} }/>
+  <div id="AboutSection" className="About" style={this.state.sectionsOn ? {zIndex: 1} : {zIndex: -1} && this.state.sectionsOn ? {opacity: 1} : {opacity: 0} }>My name is <br/> <br/>Hubert Wiśniewski <hr className='line'/>
   <h1 id='Desc' style={{fontSize: '20px', color: '#dac2a1'}}>I am an aspiring FrontEnd Developer <br/><br/>based in Poland<br/><br/><br/><br/>I like unorthodox designs <br/><br/> and <br/><br/>I hate boring websites<br/><br/><br/><br/>I am also a guitarist/singer in my band <br/><br/><p style={{color: '#f86502'}}>'The Cassino'</p>  </h1>
-  
-  </div> 
-  <div className='toWebsite' id='Start' onClick={(event) => this.websiteMode(event)} style={this.state.counter >= 10 ? {zIndex: 1} : {zIndex: 1}}>Start</div>
+  </div>
+  <div id='ContactSection' className='Contact'  style={this.state.sectionsOn ? {zIndex: 1001} : {zIndex: -1} && this.state.sectionsOn ? {opacity: 1} : {opacity: 0} }>You can find me<br/><br/> HERE <hr className='line'/>
+  <h1 id='DescTwo' style={{fontSize: '20px', color: '#dac2a1'}}><br/><br/>Email me at: <br/><br/><p style={{color: '#f86502'}} >hubertwisniewski.frontend@gmail.com</p><br/>Or you can check: <br/><br/><a href='https://github.com/HubertWisniewski' target="_blank" rel='noopener noreferrer'><img className="social"  src={github} alt='github'/></a><a href='https://linkedin.com/in/hubertwiśniewski' style={{textDecoration: 'none'}} target="_blank" rel='noopener noreferrer'> <img className='social' src={linkedin} style={{marginLeft: '1em'}} alt=''/></a> </h1>
+  </div>
+  <div className='toWebsite' id='Start' onClick={(event) => this.websiteMode(event)} style={this.state.counter >= 10 ? {zIndex: 1} : {zIndex: -1}}>Start</div>
   <div className="counter" style={this.state.websiteMode ? {opacity: 0} : {opacity: 1} && this.state.scoreAppeared ? {zIndex: 1} : {zIndex: -1}}>Score: {this.state.counter}</div>
       <div className="menu">
       <div className="one" style={this.state.websiteMode ? {opacity: 0} : {opacity: 1}}>G00D</div>
