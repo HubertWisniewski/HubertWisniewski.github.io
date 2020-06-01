@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import me from './img/me.jpg'
+import me from './img/Meblocks.png'
 
 const beginAt = Date.now()
 var lastElementTime = beginAt;
@@ -14,7 +14,8 @@ class App extends Component {
     elements: [],
     counter: 0,
     scoreAppeared: false,
-    websiteMode: false
+    websiteMode: false,
+    aboutOn: false
   }
 
   componentDidMount(){
@@ -22,13 +23,22 @@ class App extends Component {
   }
 
   showAbout = () => {
-    document.getElementById('App').style.backgroundColor = '#a00131'
+    this.setState({
+      aboutOn:true
+    })
+
+    document.getElementById('App').style.backgroundColor = 'black'
+    document.getElementById('Desc').style.animation = 'navbarslide 5s ease 0s 1 normal forwards'
   }
 
   websiteMode = (event) => {
     this.setState({
       websiteMode: true
     })
+
+      this.state.elements.forEach((element) => {
+        element.remove()
+      })
 
      event.target.style.animation = 'navbarslide 5s ease 0s 1 normal forwards'
      event.target.innerHTML = ''
@@ -113,11 +123,14 @@ class App extends Component {
 
 
 
-
   render(){
   return (
     <div id='App' className="wrapper">
-  {/* <img src={me} alt='me'/> */}
+  <img src={me} alt='me' style={this.state.aboutOn ? {zIndex: 1000} : {zIndex: -1} && this.state.aboutOn ? {opacity: 1} : {opacity: 0} }/>
+  <div className="About" style={this.state.aboutOn ? {zIndex: 1000} : {zIndex: -1} && this.state.aboutOn ? {opacity: 1} : {opacity: 0} }>My name is <br/> <br/>Hubert Wiśniewski <hr className='line'/>
+  <p id='Desc' style={{fontSize: '20px', color: 'white'}}>I am an aspiring FrontEnd Developer <br/><br/>based in Poland<br/><br/><br/><br/>I like unorthodox designs <br/><br/> and <br/><br/>I hate boring websites<br/><br/><br/><br/>I am also a guitarist/singer in my band 'The </p>
+  
+  </div> 
   <div className='toWebsite' id='Start' onClick={(event) => this.websiteMode(event)} style={this.state.counter >= 10 ? {zIndex: 1} : {zIndex: 1}}>Start</div>
   <div className="counter" style={this.state.websiteMode ? {opacity: 0} : {opacity: 1} && this.state.scoreAppeared ? {zIndex: 1} : {zIndex: -1}}>Score: {this.state.counter}</div>
       <div className="menu">

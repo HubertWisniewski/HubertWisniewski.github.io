@@ -8,6 +8,11 @@
   src: url(img/Pixeboy-z8XGD.ttf);
 }
 
+@font-face {
+  font-family: LittlePixel;
+  src: url(img/EightBitDragon-anqx.ttf);
+}
+
 body {
   overflow: hidden;
 }
@@ -98,13 +103,33 @@ body {
 }
 
 img {
-  height: 16em;
-  width: 14em;
+  height: 1000px;
+  width: 700px;
   /* border-radius: 50%; */
   position: absolute;
   filter: grayscale(100%);
   align-self: center;
-  border-radius: 50%;
+  transition: opacity 2s ease-in-out;
+}
+
+.About {
+  height: 80vh;
+  width: 47vw;
+  position: absolute;
+  /* background-color: cadetblue; */
+  right: 0;
+  align-self: flex-end;
+  font-family: LittlePixel;
+  font-size: 2em;
+  color: #a00131;
+  text-align: center;
+  transition: opacity 2s ease-in-out;
+}
+
+.line {
+  height: 0.5vh;
+  background-color: #a00131;
+  border: none;
 }
 
 
@@ -117,4 +142,9 @@ img {
   }
   68%, 72% { width: 50% }
   100% { width: 100% }
+}
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 472px;}
 }
