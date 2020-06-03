@@ -18,7 +18,7 @@ body {
 }
 
 .wrapper {
-  background-color: #dac2a1;
+  background-color: white;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -40,15 +40,15 @@ body {
   /* border: 1px solid black; */
   color: #f86502;
   text-align: center;
-  font-size: 5em;
-  font-family: Hefty;
+  font-size: 7em;
+  font-family: Pixel;
   transition: all 3s ease-in-out;
 }
 
 .hi1 {
   text-align: center;
   color: #c3073f;
-  font-family: Hefty;
+  font-family: Pixel;
   font-size: 5em;
   position: absolute;
   cursor: pointer;
@@ -182,15 +182,16 @@ body {
   100% { width: 100% }
 }
 
+@keyframes navbarroll {
+  from {width: 12%;}
+  to {width: 100%;}
+}
+
 @keyframes filters {
   0% { filter: sepia(100%); filter: saturate(100%); }
-  30% { filter: sepia(0);
+  30% { filter: sepia(0); filter: contrast(100%);
   }
   68%, 72% { filter: sepia(50%); }
   100% {filter: sepia(90%);}
 }
 
-@keyframes animated-text{
-  from{width: 0;}
-  to{width: 472px;}
-}
