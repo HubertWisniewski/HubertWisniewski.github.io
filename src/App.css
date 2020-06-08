@@ -26,8 +26,8 @@ body {
   transition: background-color 2s ease-in-out;
 }
 
-#Desc, #DescTwo {
-  font-size: 20px;
+#Desc, #DescTwo, #DescThree {
+  font-size: 40px;
 }
 
 .menu {
@@ -97,7 +97,7 @@ body {
 
 .klocek {
   padding-top: 20px;
-  flex: 1 1 0;
+  /* flex: 1 1 0; */
   height: 13vh;
   margin-top: 0;
   font-size: 0.7em;
@@ -155,6 +155,38 @@ body {
   border-radius: 20%;
 }
 
+.Project {
+  height: 80vh;
+  width: 50vw;
+  position: absolute;
+  z-index: -1;
+  /* background-color: cadetblue; */
+  right: 0;
+  align-self: flex-end;
+  font-family: LittlePixel;
+  font-size: 2em;
+  color: #a00131;
+  line-height: 40vh;
+  text-align: center;
+  transition: opacity 2s ease-in-out;
+  border-radius: 20%;
+}
+
+.Loading {
+  height: 5vh;
+  width: 50%;
+  /* background-color: red; */
+  margin: 0 auto;
+  display: flex;
+}
+
+.Loading div {
+  flex: 1 1 0;
+  border: 2px black dashed;
+  height: 100%;
+  width: 100%;
+}
+
 .line {
   height: 0.5vh;
   width: 90%;
@@ -191,6 +223,10 @@ body {
   to {width: 100%;}
 }
 
+@keyframes loading {
+  0% { }
+}
+
 @keyframes filters {
   0% { filter: sepia(100%); filter: saturate(100%); }
   30% { filter: sepia(0); filter: contrast(100%);
@@ -213,6 +249,20 @@ body {
 
   #Desc, #DescTwo {
     font-size: 1rem;
+  }
+
+  #DescThree {
+    font-size: 2rem;
+  }
+
+  .Loading {
+    height: 10vh;
+    width: 80%;
+  }
+
+  .Project {
+    line-height: 10vh;
+    width: 100%;
   }
 
 
@@ -320,6 +370,7 @@ body {
     font-size: 1rem;
   }
 
+
   .line {
     width: 100%;
   }
@@ -350,6 +401,10 @@ body {
     font-size: 2rem;
   }
 
+  #DescThree {
+    font-size: 3rem;
+  }
+
   .counter {
     font-size: 4rem;
   }
@@ -369,7 +424,7 @@ body {
 
 
   .wrapper {
-    background-color: white;
+    background-color: rgb(224, 220, 220);
     height: 100vh;
     width: 100vw;
     position: relative;
@@ -439,13 +494,14 @@ body {
   }
   
   .toWebsite:hover {
-    background-color: #a00131;
+    color: #a00131;
   }
   
   .klocek {
     padding-top: 20px;
-    flex: 1 1 0;
+    /* flex: 1 1 0; */
     height: 13vh;
+    width: 100%;
     margin-top: 0;
     font-size: 0.7em;
     color: #f86502;
@@ -502,6 +558,38 @@ body {
     transition: opacity 2s ease-in-out;
     border-radius: 20%;
   }
+
+  .Project {
+    height: 80vh;
+    width: 50vw;
+    position: absolute;
+    z-index: -1;
+    /* background-color: cadetblue; */
+    right: 0;
+    align-self: flex-end;
+    font-family: LittlePixel;
+    font-size: 2em;
+    color: #a00131;
+    line-height: 40vh;
+    text-align: center;
+    transition: opacity 2s ease-in-out;
+    border-radius: 20%;
+  }
+  
+  .Loading {
+    height: 5vh;
+    width: 50%;
+    /* background-color: red; */
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .Loading div {
+    flex: 1 1 0;
+    border: 2px black dashed;
+    height: 100%;
+    width: 100%;
+  }
   
   #Desc, #DescTwo {
     font-size: 20px;
@@ -530,5 +618,71 @@ body {
 
 
 
+
+}
+
+
+@media (min-width: 1800px) {
+
+  body {
+    font-size: 160%;
+  }
+
+  
+  #Image {
+    height: 1300px;
+    width: 900px;
+   
+  }
+
+  #Desc, #DescTwo {
+    font-size: 2rem;
+  }
+
+  .klocek {
+    height: 15vh;
+    /* padding: 5vh; */
+   width: 100%;
+    line-height: 13vh;
+    flex: 1 1 0;
+    
+  }
+
+  .Project {
+    line-height: 10vh;
+    width: 50vw;
+  }
+  
+
+}
+
+@media (min-width: 2000px) {
+
+  body {
+    font-size: 190%;
+  }
+
+  
+  #Image {
+    height: 1900px;
+    width: 1400px;
+   
+  }
+
+  #Desc, #DescTwo {
+    font-size: 3rem;
+  }
+
+  #DescThree {
+    font-size: 4rem;
+  }
+
+  
+
+  .Project {
+    line-height: 10vh;
+    width: 50vw;
+  }
+  
 
 }
